@@ -1,3 +1,4 @@
+
 import { Route, Routes } from "react-router-dom"
 import Authform from "./auth/authform/AuthLayout";
 import Signin from "./auth/signin/Signin";
@@ -6,6 +7,8 @@ import { Toaster } from "react-hot-toast";
 
 
 const App = () => {
+
+
   return (
     <main>
      <Routes>
