@@ -51,7 +51,7 @@ export default function Signup() {
           <h2 className="text-3xl font-extrabold text-gray-800 max-sm:text-[22px]">Create an Account</h2>
           <FaUserPlus className="text-black text-2xl mr-2" />
         </div>
-        <p className="text-gray-600 text-center text-[18px] mb-6 max-sm:text-[15px] max-sm:hidden">Join us and experience seamless car rentals.</p>
+        <p className="text-gray-600 text-center text-[18px] mb-6 max-sm:text-[15px] max-sm:hidden">Joiin us and experience seamless car rentals.</p>
         <p className="text-gray-600 text-center text-[18px] mb-6 max-sm:text-[15px] lg:hidden xl:hidden max-sm:flex">Join us for easy car rentals</p>
 
         <Formik initialValues={initialValues} validationSchema={SignupvalidationSchema} onSubmit={handleSubmit}>
