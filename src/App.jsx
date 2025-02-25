@@ -4,6 +4,7 @@ import Authform from "./auth/authform/AuthLayout";
 import Signin from "./auth/signin/Signin";
 import Signup from "./auth/signup/Signup";
 import { Toaster } from "react-hot-toast";
+import RootLayout from "./root/RootLayout";
 
 
 const App = () => {
@@ -19,17 +20,17 @@ const App = () => {
        </Route>
 
        {/* page route  */}
-       {/* <Route element={<RootLayout />}>
+       <Route element={<RootLayout />}>
          <Route index element={<Home />} />
-         <Route path="/explore" element={<Explore />} />
+         {/* <Route path="/explore" element={<Explore />} />
          <Route path="/saved" element={<Saved />} />
          <Route path="/all-users" element={<AllUsers />} />
          <Route path="/create-post" element={<CreatePost />} />
          <Route path="/update-post/:id" element={<EditPost />} />
          <Route path="/posts/:id" element={<PostDetails />} />
          <Route path="/profile/:id/*" element={<Profile />} />
-         <Route path="/update-profile/:id" element={<UpdateProfile />} />
-       </Route> */}
+         <Route path="/update-profile/:id" element={<UpdateProfile />} /> */}
+       </Route>
      </Routes>
      <Toaster />
     </main>
