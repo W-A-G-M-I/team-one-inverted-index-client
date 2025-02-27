@@ -5,11 +5,14 @@ import Signin from "./auth/signin/Signin";
 import Signup from "./auth/signup/Signup";
 import { Toaster } from "react-hot-toast";
 import RootLayout from "./root/RootLayout";
+import Home from "./root/pages/Homepage/Home";
+import Search from "./root/pages/components/search/Search";
+import Create from './root/pages/CreateRides/CreateRide'
+import EditRides from "./root/pages/EditRides/EditRides";
+
 
 
 const App = () => {
-
-
   return (
     <main>
      <Routes>
@@ -22,6 +25,9 @@ const App = () => {
        {/* page route  */}
        <Route element={<RootLayout />}>
          <Route index element={<Home />} />
+         <Route path="/search"  element={<Search />} />
+         <Route path="/create"  element={<Create />} />
+         <Route path="/edit/:id"  element={<EditRides />} />
          {/* <Route path="/explore" element={<Explore />} />
          <Route path="/saved" element={<Saved />} />
          <Route path="/all-users" element={<AllUsers />} />

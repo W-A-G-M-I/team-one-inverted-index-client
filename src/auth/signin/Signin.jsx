@@ -6,9 +6,10 @@ import { FaUserPlus } from "react-icons/fa";
 import Video_car from "../../assets/3752531-hd_1920_1080_24fps.mp4";
 import {SigninvalidationSchema} from '../../lib/validation/Validation'
 import { SignInAccount } from "../../lib/query/query";
-
+import { useNavigate } from "react-router-dom";
 
 export default function Signin() {
+  const navigate = useNavigate()
   const {mutate:SigninAccount, isPending, isError, error} = SignInAccount ()
   if(isError) {
     console.log('Error', error);
@@ -19,6 +20,7 @@ export default function Signin() {
     SigninAccount(values,{
       onSuccess: () => {
           action.resetForm();
+          navigate("/");
       },
   })
     console.log("Form submitted with values:", values);
