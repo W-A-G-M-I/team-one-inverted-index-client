@@ -2,7 +2,7 @@ import Logo from "../../../../assets/morent-logo.png";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-white p-10 md:flex shadow-xl justify-between items-start border-t border-gray-200">
+    <footer className="w-full bg-white py-10 px-4 md:flex shadow-xl justify-between items-start border-t border-gray-200">
       {/* Logo & Description */}
       <div className="md:w-1/3">
         <img src={Logo} alt="Morent Logo" className="w-28" />

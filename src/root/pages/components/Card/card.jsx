@@ -4,7 +4,7 @@ import { GetAllRides, useDeleteRide } from "../../../../lib/query/query";
 import Loader from "../loader/loader";
 import { IoHeart, IoTrashOutline } from "react-icons/io5";
 import { FiEdit } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -27,6 +27,7 @@ const Card = () => {
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
       {ride?.data?.map((item) => (
+        <Link to={`/ride/${item._id}`}>
         <motion.div
           key={item.id}
           variants={cardVariants}
@@ -76,6 +77,7 @@ const Card = () => {
             </motion.button>
           </div>
         </motion.div>
+      </Link>
       ))}
     </div>
   );

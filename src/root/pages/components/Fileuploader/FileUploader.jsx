@@ -42,6 +42,7 @@ const FileUploader = ({ selectedImage, setSelectedImage }) => {
               className="w-full h-full object-cover rounded-lg"
             />
             <button
+            type="button"
               onClick={handleButtonClick}
               className="absolute inset-0 flex items-center justify-center bg-black/50 text-white text-sm font-medium opacity-0 hover:opacity-100 transition-opacity"
             >

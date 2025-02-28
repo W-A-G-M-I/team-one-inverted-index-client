@@ -6,15 +6,18 @@ import { FaUserPlus } from "react-icons/fa";
 import Video_car from "../../assets/3752531-hd_1920_1080_24fps.mp4";
 import { CreateUserAccount } from "../../lib/query/query";
 import { SignupvalidationSchema } from "../../lib/validation/Validation";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Signup() {
+  const navigate = useNavigate()
     const {mutate:Createuser, isPending:isSigningUp, isError, error} = CreateUserAccount() 
   const initialValues = { fullname: "", email: "", password: "" };
   const handleSubmit = (values, { setSubmitting }) => {
     Createuser(values,{
         onSuccess: () => {
             action.resetForm();
+            navigate("/sign-in");
         },
     })
     console.log("Form submitted with values:", values);
