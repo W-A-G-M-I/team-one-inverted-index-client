@@ -9,6 +9,9 @@ import Home from "./root/pages/Homepage/Home";
 import Search from "./root/pages/components/search/Search";
 import Create from './root/pages/CreateRides/CreateRide'
 import EditRides from "./root/pages/EditRides/EditRides";
+import Cart from "./root/pages/components/CartPage/cart";
+import CarDetails from "./root/pages/CarDetails/CarDetails";
+import Checkout from "./root/pages/CheckOutPage/checkout";
 
 
 
@@ -28,6 +31,9 @@ const App = () => {
          <Route path="/search"  element={<Search />} />
          <Route path="/create"  element={<Create />} />
          <Route path="/edit/:id"  element={<EditRides />} />
+         <Route path="/cart"  element={<Cart />} />
+         <Route path="/ride/:id"  element={<CarDetails />} />
+         <Route path="/checkout"  element={<Checkout />} />
          {/* <Route path="/explore" element={<Explore />} />
          <Route path="/saved" element={<Saved />} />
          <Route path="/all-users" element={<AllUsers />} />

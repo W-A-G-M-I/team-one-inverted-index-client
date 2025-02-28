@@ -51,6 +51,25 @@ export const SignInAccount = () => {
     })
 }
 
+export const useLogout = () => {
+    return useMutation({
+        mutationFn: async () => {
+            try {
+                const res = await fetch('http://localhost:5000/api/auth/logout', {
+                    method: 'POST',
+                });
+                const data = await res.json();
+                if (!res.ok) throw new Error(data.error);
+                console.log(data);
+                toast.success('Logged out successfully!');
+                return data;
+            } catch (error) {
+                console.error(error);
+                toast.error(error.message || 'Failed to create user');
+            }
+        }
+    })
+}
 
 export const GetAuthUser = () => {
     return useQuery({
@@ -127,7 +146,7 @@ export const useDeleteRide = () => {
     return useMutation({
         mutationFn: async (rid) => {
             try {
-                const res = await fetch(`http://localhost:5000/api/ride/${rid}`, {
+                const res = await fetch(`http://localhost:5000/api/ride/delete/${rid}`, {
                     method: 'DELETE',
                 });
                 const data = await res.json();
@@ -203,5 +222,25 @@ export const useEditRide = () => {
             queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.GET_POSTS] });
             toast.success('Post Updated Successfully');
         },
+    });
+};
+
+export const useGetRideById = (id) => {
+    return useQuery({
+        queryKey: [QUERY_KEYS.GET_RIDES, id],
+        queryFn: async () => {
+            try {
+                const res = await fetch(`http://localhost:5000/api/ride/${id}`);
+                if (!res.ok) throw new Error("Failed to fetch ride");
+                const data = await res.json();
+                return data;
+            } catch (error) {
+                console.error(error);
+                toast.error(error.message || 'Failed to fetch ride');
+                throw error;
+            }
+        },
+        enabled: !!id, // Prevent running query if id is undefined
+        retry: false,
     });
 };

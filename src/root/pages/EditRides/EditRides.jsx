@@ -49,7 +49,7 @@ const { mutate:EditRide, isPending} = useEditRide()
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="w-full mb-6"
+            className="w-full mb-6  max-sm:px-3"
           >
             <Form className="flex flex-col gap-6 w-full max-w-[600px] mx-auto bg-white shadow-lg p-6 rounded-lg border mt-3">
               <div className="grid grid-cols-2 gap-4">
